@@ -1,0 +1,16 @@
+package com.example.listadeprodutos
+
+import android.app.Activity
+import android.os.Bundle
+import android.view.View
+import android.widget.TextView
+import android.widget.Toast
+
+class MainActivity: Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val view = TextView(this)
+        view.text = "cesta de frutas"
+        setContentView(view)
+    }
+}
