@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Lista de Produtos</string>
+    <string name="salada_de_frutas">Salada de frutas</string>
+    <string name="laranja_manga_e_uva">Laranja, Manga e Uva</string>
+    <string name="_19_99">19.99</string>
 </resources>
