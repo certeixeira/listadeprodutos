@@ -1,11 +1,10 @@
-package com.example.listadeprodutos
+package com.example.listadeprodutos.activity
 
 import android.app.Activity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.listadeprodutos.ListaProdutosAdapter
+import com.example.listadeprodutos.R
 
 class MainActivity: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
