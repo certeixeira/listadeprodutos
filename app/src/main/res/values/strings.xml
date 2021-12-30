@@ -3,4 +3,8 @@
     <string name="salada_de_frutas">Salada de frutas</string>
     <string name="laranja_manga_e_uva">Laranja, Manga e Uva</string>
     <string name="_19_99">19.99</string>
+    <string name="descri_o">Descrição</string>
+    <string name="valor">Valor</string>
+    <string name="salvar">salvar</string>
+    <string name="nome">Nome</string>
 </resources>
