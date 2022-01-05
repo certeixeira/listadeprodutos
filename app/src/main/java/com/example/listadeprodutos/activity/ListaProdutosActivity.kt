@@ -15,7 +15,7 @@ import com.example.listadeprodutos.databinding.ActivityListaProdutosBinding.infl
 import com.example.listadeprodutos.databinding.ProdutoItemBinding.inflate
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class ListaProdutosActivity: AppCompatActivity(R.layout.activity_lista_produtos) {
+class ListaProdutosActivity: AppCompatActivity() {
 
     private val dao = ProdutosDAO()
     private val adapter = ListaProdutosAdapter(context = this, produtos = dao.buscaTodos())
@@ -25,6 +25,7 @@ class ListaProdutosActivity: AppCompatActivity(R.layout.activity_lista_produtos)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
         configuraRecyclerView()
         configuraFab()
         }
@@ -53,6 +54,5 @@ class ListaProdutosActivity: AppCompatActivity(R.layout.activity_lista_produtos)
         val dao = ProdutosDAO()
         Log.i("MainActivity", "onCreate: ${dao.buscaTodos()}")
         recyclerView.adapter = adapter
-        setContentView(binding.root)
     }
 }

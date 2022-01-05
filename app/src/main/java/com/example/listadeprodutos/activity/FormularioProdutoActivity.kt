@@ -19,6 +19,7 @@ class FormularioProdutoActivity :
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(binding.root)
         configuraBotaoSalvar()
     }
 
@@ -53,6 +54,6 @@ class FormularioProdutoActivity :
             descricao = descricao,
             valor = valor
         )
-//        setContentView(binding.root)
+
     }
 }
