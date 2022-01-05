@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/certe/AndroidStudioProjects/ListadeProdutos/app/src/main/res/drawable/plano_de_fundo_produto.xml" value="0.3828125" />
         <entry key="..\:/Users/certe/AndroidStudioProjects/ListadeProdutos/app/src/main/res/layout/activity_formulario_produto.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/certe/AndroidStudioProjects/ListadeProdutos/app/src/main/res/layout/activity_lista_produtos.xml" value="0.20697463768115942" />
         <entry key="..\:/Users/certe/AndroidStudioProjects/ListadeProdutos/app/src/main/res/layout/activity_main.xml" value="0.33" />
