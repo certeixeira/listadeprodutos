@@ -15,6 +15,7 @@ import com.example.listadeprodutos.databinding.ActivityFormularioProdutoBinding.
 import com.example.listadeprodutos.databinding.ActivityListaProdutosBinding
 import com.example.listadeprodutos.databinding.ActivityListaProdutosBinding.inflate
 import com.example.listadeprodutos.databinding.ProdutoItemBinding.inflate
+import com.example.listadeprodutos.dialog.FormularioImagemDialog
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ListaProdutosActivity: AppCompatActivity() {
@@ -30,6 +31,9 @@ class ListaProdutosActivity: AppCompatActivity() {
         setContentView(binding.root)
         configuraRecyclerView()
         configuraFab()
+        FormularioImagemDialog(this).mostra { imagem ->
+            Log.i("ListaProdutosActivity", "onCreate: $imagem")
+        }
     }
 
     override fun onResume() {

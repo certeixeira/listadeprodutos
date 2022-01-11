@@ -2,11 +2,13 @@ package com.example.listadeprodutos
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.listadeprodutos.activity.Produto
 import com.example.listadeprodutos.databinding.ProdutoItemBinding
+import com.example.listadeprodutos.extensions.tentaCarregarImagem
 import java.math.BigDecimal
 import java.text.NumberFormat
 import java.util.*
@@ -15,6 +17,7 @@ class ListaProdutosAdapter(
     private val context: Context,
     produtos: List<Produto>
 ) : RecyclerView.Adapter<ListaProdutosAdapter.ViewHolder>() {
+
 
     private val produtos = produtos.toMutableList()
 
@@ -28,7 +31,15 @@ class ListaProdutosAdapter(
             val valor = binding.produtoItemValor
             val valorEmMoeda: String = formataEmMoedaBrasileira(produto.valor)
             valor.text = valorEmMoeda
-            binding.imageView.load(produto.imagem)
+
+            val visibilidade = if (produto.imagem != null) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+            binding.imageView.visibility = visibilidade
+
+            binding.imageView.tentaCarregarImagem(produto.imagem)
         }
 
         private fun formataEmMoedaBrasileira(valor: BigDecimal): String {
