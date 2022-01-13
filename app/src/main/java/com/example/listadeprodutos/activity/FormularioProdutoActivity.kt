@@ -29,6 +29,7 @@ class FormularioProdutoActivity :
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        title = "Cadastrar produto"
         configuraBotaoSalvar()
 
         val imageLoader = ImageLoader.Builder(this)
@@ -43,7 +44,7 @@ class FormularioProdutoActivity :
 
         binding.activityFormularioProdutoImagem.setOnClickListener {
             FormularioImagemDialog(this)
-                .mostra { imagem ->
+                .mostra(url) { imagem ->
                     url = imagem
                     binding.activityFormularioProdutoImagem.tentaCarregarImagem(url)
 

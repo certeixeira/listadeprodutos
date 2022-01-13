@@ -1,33 +1,41 @@
 package com.example.listadeprodutos.dialog
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
-import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import com.example.listadeprodutos.databinding.FormularioImagemBinding
 import com.example.listadeprodutos.extensions.tentaCarregarImagem
 
 class FormularioImagemDialog(private val context: Context) {
 
-    fun mostra(quandoImagemCarregada: (imagem: String) -> Unit) {
+    fun mostra(urlPadrao: String? = null, quandoImagemCarregada: (imagem: String) -> Unit) {
         val binding = FormularioImagemBinding
-            .inflate(LayoutInflater.from(context))
-        binding.formularioImagemBtnCarregar.setOnClickListener {
-            val url = binding.formularioImagemUrl.text.toString()
-            binding.formularioImagemImageview.tentaCarregarImagem(url)
-        }
+            .inflate(LayoutInflater.from(context)).apply {
+                urlPadrao?.let {
+                    formularioImagemImageview.tentaCarregarImagem(it)
+                    formularioImagemUrl.setText(it)
+                }
 
-        AlertDialog.Builder(context)
-            .setView(binding.root)
-            .setPositiveButton("Confirmar") { _, _ ->
-                val url = binding.formularioImagemUrl.text.toString()
-                Log.i("FormularioImagemDialog", "mostra $url")
-                quandoImagemCarregada(url)
-            }
-            .setNegativeButton("Cancelar") { _, _ ->
+                    formularioImagemBtnCarregar.setOnClickListener {
+                        val url = formularioImagemUrl.text.toString()
+                        formularioImagemImageview.tentaCarregarImagem(url)
+                    }
+
+
+                AlertDialog.Builder(context)
+                    .setView(root)
+                    .setPositiveButton("Confirmar") { _, _ ->
+                        val url = formularioImagemUrl.text.toString()
+                        quandoImagemCarregada(url)
+                    }
+                    .setNegativeButton("Cancelar") { _, _ ->
+
+                    }
+                    .show()
+
 
             }
-            .show()
+
+
     }
 }
